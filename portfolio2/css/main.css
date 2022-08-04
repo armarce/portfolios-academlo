@@ -1,0 +1,402 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+:root{
+    --orange: #F1A600;
+    --dark-gray: #1F1D2C;
+    --dark-blue: #242635;
+    --light-gray: #E5E5E5;
+    --gray: #999;
+    --white: #FFFFFF;
+    --title-desktop: 80px;
+    --subtitle-desktop: 40px;
+    --subtitle-desktop2: 30px;
+    --subtitle-desktop3: 24px;
+    --text2: 17px;
+}
+.orange{
+    color: var(--orange);
+}
+.gray{
+    color: var(--gray);
+}
+.font-bold{
+    font-weight: bold;
+}
+.subtitle2{
+    font-size: var(--subtitle-desktop2);
+    color: var(--light-gray);
+    font-weight: bold;
+}
+.subtitle3{
+    font-size: var(--subtitle-desktop3);
+    color: var(--light-gray);
+}
+.text2{
+    font-size: var(--text2);
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+h2{
+    font-size: var(--subtitle-desktop);
+    text-align: center;
+    font-weight: bold;
+    color: var(--white);
+    margin: 0;
+}
+header{
+    position: relative;
+    font-size: 18px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 143rem;
+    padding: 4rem 14.6rem 14.6rem 14.6rem;
+    background-color: var(--dark-gray);
+}
+header nav{
+    position: relative;
+    z-index: 1;
+}
+header nav ul{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 0.6rem;
+}
+header nav ul li{
+    padding: 0 0 0 6rem;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(--white);
+}
+header nav ul li a:hover{
+    color: var(--orange);
+}
+header section{
+    display: grid;
+    position: relative;
+    z-index: 1;    
+    padding: 0;
+    height: 57.6rem;
+    grid-template-areas:'title photo'
+                        'info photo'
+                        'experiencia photo'
+                        'social photo'
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 14.4rem 15rem 14rem 12rem;
+    color: var(--white);
+}
+
+header section ul li a{
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 5.4rem;    
+}
+header section ul{
+    display: flex;
+    justify-content: space-between;
+    width: 32rem;
+    padding: 0;
+}
+header section ul li a.linkedin{
+    background-image: url('../icons/linkedin.svg');
+}
+header section ul li a.instagram{
+    background-image: url('../icons/instagram.svg');
+}
+header section ul li a.twitter{
+    background-image: url('../icons/twitter.svg');
+}
+header section p{
+    font-size: 30px;
+    line-height: 4rem;
+}
+header section h1{
+    grid-area: title;
+    font-size: var(--title-desktop);
+}
+header section p#info{
+    grid-area: info;
+    width: 40rem;
+}
+header section p#experiencia{
+    grid-area: experiencia;
+    width: 24rem;
+}
+
+header section figure{
+    grid-area: photo;
+    margin:0;
+    padding: 0;
+    margin-top: 4rem;
+    background-image: url('../logos-Imagenes/photo-desktop.png');
+    height: 536px;
+    width: 560px;
+}
+
+header #box{
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    width: 48rem;
+    height: 75rem;
+    background-color: var(--dark-blue);
+}
+main{
+    margin: 0 auto;
+    max-width: 144.2rem;
+    padding: 0;
+}
+main #about{
+    text-align: center;
+    background-color: var(--dark-blue);
+    padding: 4rem 14.6rem 14.6rem 14.6rem;
+}
+main #about p{
+    margin: 0 auto;
+    max-width: 76ch;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--light-gray);
+    padding: 4rem 0 4rem 0;
+    line-height: 2.8rem;
+}
+main #about ul{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 4rem;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 60rem;
+    color: var(--light-gray);
+}
+main #about ul li{
+    display: flex;
+    flex-direction: column;
+    max-width: 18rem;
+    gap: 1.2rem;
+}
+main #about ul li span{
+    display: block;;
+}
+main #about ul li img{
+    display: block;
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+}
+main #experience{
+    padding: 4rem 14.6rem 1rem 14.6rem;
+    background-color: var(--dark-gray);
+}
+main #experience ul{
+    margin: 0 auto;
+    padding-top: 7rem;
+    max-width: 62rem;
+    color: var(--light-gray);
+}
+main #experience ul li{
+    display: grid;
+    grid-template-areas: 'logo name .' 
+                            'logo position years'
+                            'logo period .';
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    row-gap: 1rem;
+    padding-bottom: 5rem; 
+}
+main #experience ul li img{
+    grid-area: logo;
+    display: block;
+    width: 13rem;
+    height: 13rem;
+}
+main #experience ul li .subtitle2{
+    grid-area: name;
+}
+main #experience ul li .position{
+    grid-area: position;
+    font-weight: normal;
+}
+main #experience ul li .text2{
+    grid-area: period;
+}
+main #experience ul li .years{
+    grid-area: years;
+    text-align: right;
+}
+main #experience ul li span{
+    display: block;
+}
+main #skills{
+    position: relative;
+    background-color: var(--dark-gray);
+    height: 71rem;
+}
+main #skills h2{
+    position: relative;
+    z-index: 1;
+    padding: 5.4rem 0;
+}
+main #skills ul{
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    max-width: 86rem;
+}
+main #skills ul li{
+    display: flex;
+    align-items: center;
+    padding-bottom: 4.4rem;
+}
+main #skills ul li .subtitle2{
+    font-weight: normal;
+}
+main #skills ul li .orange{
+    font-size: 76px;
+    font-weight: bold;
+    padding-right: 8rem;
+}
+main #skills #background{
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    background-color: var(--dark-blue);
+    width: 50%;
+    height: 71rem;
+}
+main #portfolio{
+    padding: 0 14rem 7rem  14rem;
+    background-color: var(--dark-gray);
+}
+main #portfolio h2{
+    padding: 7rem 0 6.4rem 0;
+}
+main #portfolio ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
+    justify-content: center;
+    row-gap: 9rem;
+    column-gap: 2rem;
+}
+main #portfolio ul li{
+    background-color: var(--orange);
+    text-align: center;
+    height: 370px;
+    width: 518px;
+    padding: 2.6rem 4rem 0 1.4rem;
+}
+main #portfolio ul li:nth-child(even){
+    background-color: var(--dark-blue);
+    height: 360px;
+}
+main #portfolio ul li a img{
+    display: block;
+    width: 540px;
+    height: 412px;
+}
+main #contact{
+    padding: 0rem 14rem 6rem 14rem;
+    background-color: var(--dark-blue);
+}
+main #contact h2{
+    padding: 7rem 0 6.4rem 0;
+}
+main #contact ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 64rem;
+}
+main #contact ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+}
+main #contact ul li img{
+    width: 110px;
+    height: 110px;
+    margin-bottom: 1.2rem;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-gray);
+    height: 16rem;
+    padding: 0rem 14rem 0rem 14rem;
+}
+footer p{
+    height: 2rem;
+    color: var(--white);
+}
+footer p a{
+    color: var(--white);
+}
+footer p a:hover{
+    text-decoration: underline;
+}
+/*
+
+@media (max-width: 70rem) {
+    header nav ul{
+        flex-direction: column;
+    }
+    header section{
+        max-width: 70rem;
+        height: auto;
+        grid-template-areas:'title'
+                            'info'
+                            'photo'
+                            'experiencia'
+                            'social'
+        ;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        grid-template-rows: none;
+    }
+    header section figure{
+        margin: 0 auto;
+        background-image: url('../logos-Imagenes/photo-mobile.png');
+        border: 1px solid red;
+        width: 200px;
+        height: 213px;
+
+    }
+    header section h1{
+        text-align: center;
+    }
+    header section p#info{
+        margin: 0 auto;
+        width: 40rem;
+    }
+    header section p#experiencia{
+        width: 100%;
+        text-align: center;
+    }
+    header section ul{
+        margin: 0 auto;
+    }
+    
+}
+*/
