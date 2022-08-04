@@ -60,7 +60,7 @@ header{
     font-size: 18px;
     box-sizing: border-box;
     margin: 0 auto;
-    max-width: 143rem;
+    max-width: 144.2rem;
     padding: 4rem 14.6rem 14.6rem 14.6rem;
     background-color: var(--dark-gray);
 }
@@ -98,6 +98,7 @@ header section{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 14.4rem 15rem 14rem 12rem;
     color: var(--white);
+    border: 1px solid blue;
 }
 
 header section ul li a{
@@ -146,6 +147,7 @@ header section figure{
     padding: 0;
     margin-top: 4rem;
     background-image: url('../logos-Imagenes/photo-desktop.png');
+    background-repeat: no-repeat;
     height: 536px;
     width: 560px;
 }
