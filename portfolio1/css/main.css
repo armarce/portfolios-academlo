@@ -40,6 +40,7 @@ ul{
 h3{
     font-size: var(--size-h3);
     font-weight: 600;
+    padding-top: 3rem;
     margin-bottom: 3rem;
     color: var(--dark-gray);
     text-align: center;
@@ -296,9 +297,8 @@ header section form fieldset input[type=submit]{
     background-color: var(--green);
     border-radius: 1.8rem;
 }
-
 main{
-    margin: 26rem auto 0 auto;
+    margin: 23rem auto 0 auto;
     padding: 0 1rem;
     width: 100%;
     height: auto;
@@ -338,7 +338,7 @@ main #about a img{
     filter: invert(1);
 }
 main #studies{
-    padding-top: 4rem;
+    padding-top: 1rem;
     background-color: var(--white);
 }
 main #studies ul{
@@ -383,7 +383,7 @@ main #studies ul li span.text{
     line-height: 2.4rem;
 }
 main #skills{
-    padding: 1.4rem 28rem 10rem 28rem;
+    padding: 0 28rem 7rem 28rem;
 }
 main #skills label{
     display: flex;
@@ -432,12 +432,15 @@ main #experience ul li img{
 }
 main #experience ul li span{
     display: block;
-    font-size: 22px;
+    font-size: var(--size-text2);
     margin-bottom: 1rem;
     line-height: 3rem;
 }
+main #experience .btn {
+    display: none;
+}
 main #portfolio{
-    padding-top: 4rem;
+    padding-top: 1rem;
 }
 main #portfolio ul{
     display: grid;
@@ -459,8 +462,8 @@ main #portfolio ul li img:hover{
     opacity: 1;
 }
 main #contact{
-    height: 60rem;
-    padding-top: 4rem;
+    height: 58rem;
+    padding-top: 1rem;
 }
 main #contact ul{
     margin: 0 auto;
@@ -751,18 +754,70 @@ footer .copyright a:hover{
         padding: 0 2rem 6rem 2rem;
     }
     main #experience{
+        position: relative;
         padding: 1rem 0rem 5rem 0rem;
-    }    
+    }
+    main #experience #exp-container{
+        overflow: hidden;
+    }
+    main #experience ul{
+        display: flex;
+        width: 60rem;
+        flex-direction: row;
+        gap: 4rem;
+        margin-top: 4rem;
+    }
+    main #experience ul li{
+        height: auto;
+        min-width: 18rem;
+    }
+    main #experience ul li span{
+        max-width: 12ch;
+        line-height: 2.2rem;
+    }
+    main #experience ul li img{
+        width: 7rem;
+        height: 7rem;
+        object-fit: cover;
+        margin-bottom: 2rem;
+    }
+
+    main #experience .btn {
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 50%;
+        z-index: 10;
+        cursor: pointer;
+        background-color: var(--orange);
+        font-size: 18px;
+        color: var(--white);
+        font-weight: bold;
+    }
+
+    main #experience .btn:active {
+        transform: scale(1.1);
+    }
+
+    main #experience .btn-prev {
+        left: 1rem;
+    }
+
+    main #experience .btn-next {
+        right: 1rem;
+    }
+      
     main #portfolio{
-        padding-top: 4rem 1rem 0 1rem;
+        padding-top: 4rem;
     }
     main #portfolio ul li{
         box-shadow: none;
     }    
     main #portfolio ul li img{
-        max-width: 40rem;
-        max-height: 40rem;
-        padding: 1rem;
+        padding: 0;
         height: auto;
         object-fit: cover;
     }
