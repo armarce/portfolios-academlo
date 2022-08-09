@@ -345,6 +345,7 @@ main #studies ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
 }
 main #studies ul li{
     display: flex;
@@ -448,9 +449,6 @@ main #portfolio ul{
     grid-template-columns: repeat(auto-fill, minmax(46rem, 1fr));
     gap: 2rem;
     text-align: center;
-}
-main #portfolio ul li{
-    /*box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;*/
 }
 main #portfolio ul li img{
     width: 46rem;
