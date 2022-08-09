@@ -107,7 +107,7 @@ header nav input{
 }
 header nav ul{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     height: 6rem;
 }
