@@ -3,6 +3,7 @@
 :root{
     --green: #197F5b;
     --dark-green: #197f5a;
+    --light-gree: #309D69;
     --orange: #EF9919;
     --light-orange: #f8f5f3;
     --black: #000000;
@@ -10,10 +11,12 @@
     --dark-gray: #333;
     --medium-gray: #EDE4DB;
     --white: #FFFFFF;
-    --size-title-desktop: 80px;
-    --size-subtitle-desktop: 50px;
-    --size-title-mobile: 32px;
-    --size-subtitle-mobile: 30px;
+    --size-title: 80px;
+    --size-h3: 50px;
+    --size-subtitle: 50px;
+    --size-text: 24px;
+    --size-text2: 22px;
+    --size-text4: 19px;
 }
 html{
     font-size: 62.5%;
@@ -35,7 +38,7 @@ ul{
     padding: 0;
 }
 h3{
-    font-size: var(--size-subtitle-desktop);
+    font-size: var(--size-h3);
     font-weight: 600;
     margin-bottom: 3rem;
     color: var(--dark-gray);
@@ -62,14 +65,44 @@ h3{
 .font-bold{
     font-weight: bold;
 }
+.center{
+    text-align: center;
+}
 header{
     margin: auto;
+    display: grid;
+    grid-template-areas: 'nav'
+                        'h1'
+                        'h2'
+                        'person'
+                        'corners'
+                        'social-networks'
+                        'section'
+                        ;
     background-color: var(--green);
     max-width: 144rem;
     height: 119rem;
 }
 header nav{
+    grid-area: nav;
     padding: 2rem 4rem;
+    position: relative;
+}
+header nav label{
+    display: none;
+    background-image: url('../icons/menu.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2.6rem;
+    height: 2.6rem;
+    filter: invert(1);
+    position: absolute;
+    margin: 0;
+    top: 2rem;
+    right: 4rem;
+}
+header nav input{
+    display: none;
 }
 header nav ul{
     display: flex;
@@ -92,19 +125,24 @@ header nav ul li a:hover{
     color: var(--orange);
 }
 header h1{
-    font-size: var(--size-title-desktop);
+    grid-area: h1;
+    font-size: var(--size-title);
     text-align: center;
     margin: 2.4rem 0 2rem 0;
+    padding: 0 2rem;
     font-weight: 600;
 }
 header h2{
+    grid-area: h2;
     margin: auto;
-    font-size: var(--size-subtitle-desktop);
+    padding: 0 2rem;
+    font-size: var(--size-subtitle);
     max-width: 90rem;
     text-align: center;
     font-weight: 400;
 }
 header #person{
+    grid-area: person;
     position: relative;
     margin: 4rem auto;
     z-index: 1;
@@ -137,14 +175,16 @@ header #person #card2{
     right: 0;
 }
 header #person #card1 span, header #person #card2 span{
-    font-size: 19px;
+    font-size: var(--size-text4);
 }
 header #corners{
+    grid-area: corners;
     display: flex;
     width: 100%;
     flex-direction: rows;
     justify-content: space-between;
     height: 14rem;
+    border: none;
 }
 header #corner-left{
     position: relative;
@@ -169,6 +209,7 @@ header #corner-right{
     border-bottom: 14rem solid var(--white);
 }
 header #social-networks{
+    grid-area: social-networks;
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -203,6 +244,7 @@ header #social-networks a:hover{
     opacity: 0.8;
 }
 header section{
+    grid-area: section;
     position: relative;
     top: -11rem;
     margin: 0 auto;
@@ -213,7 +255,7 @@ header section{
 
 }
 header section span{
-    font-size: 24px;
+    font-size: var(--size-text);
     font-weight: bold;
     letter-spacing: .5px;
 }
@@ -256,7 +298,7 @@ header section form fieldset input[type=submit]{
 }
 
 main{
-    margin: 24rem auto 0 auto;
+    margin: 26rem auto 0 auto;
     max-width: 144rem;
     height: auto;
     font-size: 18px;
@@ -264,6 +306,9 @@ main{
 main #about{
     background-color: var(--white);
     padding: 0 18rem;
+}
+main #about h3{
+    text-align: left;
 }
 main #about p{
     border-left: 6px solid var(--green);
@@ -292,24 +337,23 @@ main #about a img{
     filter: invert(1);
 }
 main #studies{
-    padding: 0rem 18rem 0 18rem;
+    padding-top: 4rem;
     background-color: var(--white);
 }
 main #studies ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
 }
 main #studies ul li{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 40rem;
+    min-width: 36rem;
     height: 40rem;
     background-color: var(--light-orange);
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
     text-align: center;
     row-gap: 2rem;
 }
@@ -326,12 +370,12 @@ main #studies ul li img.academlo{
     object-fit: cover;
 }
 main #studies ul li span.university{
-    font-size: 26px;
+    font-size: var(--size-text);
     font-weight: bold;
     max-width: 10ch;
 }
 main #studies ul li span.years{
-    font-size: 15px;
+    font-size: var(--size-text2);
 }
 main #studies ul li span.text{
     max-width: 22ch;
@@ -415,14 +459,14 @@ main #portfolio ul li img:hover{
 }
 main #contact{
     height: 60rem;
-    padding-top: 4rem
+    padding-top: 4rem;
 }
 main #contact ul{
     margin: 0 auto;
     padding-top: 4rem;
     display: grid;
     max-width: 80rem;
-    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
 }
 main #contact ul li{
@@ -433,7 +477,7 @@ main #contact ul li{
     gap: 2rem;
 }
 main #contact ul li .text-phone, main #contact ul li .text-email{
-    font-size: 24px;
+    font-size: var(--size-text);
 }
 main #contact ul li img{
     display: block;
@@ -468,4 +512,282 @@ footer .copyright a{
 }
 footer .copyright a:hover{
     text-decoration: underline;
+}
+
+@media (max-width: 1024px){
+    :root{
+        --size-title: 60px;
+        --size-h3: 38px;
+        --size-subtitle: 38px;
+    }
+    header nav ul li{
+        padding: 0 1.2rem;
+        text-align: center;
+    }
+    header{
+        height: 100rem;
+    }
+    header #person{
+        width: 50rem;
+        height: 45rem;
+        background-size: 33rem;
+    }
+    header #corner-left{
+        bottom: 0rem;
+        border-right: 8rem solid var(--green);
+        border-top: 8rem solid var(--green);
+        border-left: 8rem solid var(--white);
+        border-bottom: 8rem solid var(--white);
+    }
+    header #corner-right{
+        bottom: 0rem;
+        border-right: 8rem solid var(--white);
+        border-top: 8rem solid var(--green);
+        border-left: 8rem solid var(--green);
+        border-bottom: 8rem solid var(--white);
+    }
+    main #about{
+        padding: 0 8rem;
+    }
+    main #skills{
+        padding: 1.4rem 8rem 10rem 8rem;
+    }    
+}
+
+@media (max-width: 768px){
+
+    :root{
+        --size-title: 32px;
+        --size-h3: 30px;
+        --size-subtitle: 22px;
+        --size-text: 20px;
+        --size-text2: 16px;
+        --size-text3: 14px;
+        --size-text4: 12px;
+        --size-text5: 10px;
+    }
+
+    header{
+        grid-template-areas: 'nav'
+                            'person'
+                            'h1'
+                            'h2'
+                            'corners'
+                            'social-networks'
+                            'section'
+                            ;
+        height: 58rem;
+    }
+    header h2{
+        position: relative;
+        z-index: 2;;
+        padding: 0 2rem 4rem 2rem;
+    }
+    header nav{
+        box-sizing: border-box;
+        z-index: 4;
+    }
+    header nav label{
+        display: block;
+    }
+    header nav ul{
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-start;
+        top: 5rem;
+        height: 100vh;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+        background-color: #309D69;
+        padding: 0;
+        width: 100%;
+    }
+    header nav ul li a{
+        display: block;
+        padding: 1rem;
+        width: 100%;
+    }
+    header nav input:checked ~ ul{
+        left: 0;
+    }
+    header #person{
+        margin: 5rem auto 1.6rem auto;
+        z-index: 1;
+        width: 20rem;
+        height: 24rem;
+        background-image: url('../logos-img/person2.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+    header #person #card1, header #person #card2{
+        height: 4.4rem;
+        width: 9.4rem;
+        border-radius: 2rem;
+        box-shadow: rgba(255, 255, 255, 0.2) 0 .4rem 0;
+    }
+    header #person #card1{
+        top: -2.2rem;
+        left: -3.2rem;
+    }
+    header #person #card2{
+        bottom: 0;
+        right: -3.2rem;
+    }
+    header #social-networks{
+        margin: 2rem auto;
+        width: 60%;
+        z-index: 2;
+        background-color: var(--dark-green);
+    }
+    header #social-networks a{
+        width: 5rem;
+        height: 5rem;
+        background-size: 2.5rem 2.5rem;    
+    }
+    header #corner-left{
+        top: -6rem;
+        border-right: 4.5rem solid var(--green);
+        border-top: 8rem solid var(--green);
+        border-left: 4.5rem solid var(--white);
+        border-bottom: 8rem solid var(--white);
+    }
+    header #corners{
+        height: 10rem;
+        background-color: var(--dark-green);
+    }
+    header #corner-right{
+        top: -6rem;
+        border-right: 4.5rem solid var(--white);
+        border-top: 8rem solid var(--green);
+        border-left: 4.5rem solid var(--green);
+        border-bottom: 8rem solid var(--white);
+    }
+    header section{
+        z-index: 3;
+        top: -14rem;
+        margin: 0 1rem;
+        padding: 2rem 5rem 2rem 5rem;
+        max-width: 88rem;
+        height: auto;
+        background-color: var(--light-orange);
+    }
+    header section form fieldset{
+        height: 3.6rem;
+    }
+    header section form fieldset input[type=text]{
+        margin: 0;
+        padding: 0.8rem 2rem;
+    }
+    header section form fieldset input[type=submit]{
+        padding: 0.8rem 2rem;
+    }
+    main{
+        font-size: var(--size-text2);
+    }
+    main #about{
+        padding: 0 2rem;
+    }
+    main #about p{
+        border-left: 4px solid var(--dark-green);
+        padding: 1rem;
+    }
+    main #about a{
+        margin: 5rem auto 0 auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 20rem;
+        height: 4rem;
+        background-color: var(--green);
+        border-radius: 1.8rem;
+        color: var(--white);
+        text-align: center;
+        padding: 0 2rem;
+    }
+    main #about a img{
+        height: 2rem;
+        width: 2rem;
+    }
+    main #studies ul{
+        flex-direction: column;
+        gap: 4rem;
+    }
+    main #studies ul li img{
+        height: 6rem;
+        width: 6rem;
+    }
+    main #studies ul li{
+        min-width: 13rem;
+        height: auto;
+        padding: 1rem 1rem;
+        text-align: center;
+        row-gap: 2rem;
+        border-radius: 2rem;
+    }
+    main #studies ul li img.academlo{
+        margin-bottom: 1.6rem;
+        height: 7rem;
+        width: 7rem;
+        object-fit: cover;
+    }
+    main #studies ul li span.university{
+        font-size: var(--size-text2);
+    }
+    main #studies ul li span.years{
+        font-size: var(--size-text3);
+    }
+    main #studies ul li span.text{
+        font-size: var(--size-text3);
+        max-width: 14ch;
+    }
+    main #skills{
+        padding: 0 2rem 6rem 2rem;
+    }
+    main #experience{
+        padding: 1rem 1rem 5rem 1rem;
+    }    
+    main #portfolio{
+        padding-top: 4rem 2rem 0 2rem;
+    }
+    main #portfolio ul li{
+        box-shadow: none;
+    }    
+    main #portfolio ul li img{
+        max-width: 40rem;
+        max-height: 40rem;
+        padding: 1rem;
+        height: auto;
+        object-fit: cover;
+    }
+    main #contact{
+        height: 38rem;
+    }
+    
+    main #contact ul{
+        margin: 0 auto;
+        padding-top: 2rem;
+        max-width: 80rem;
+        grid-template-columns: 1fr 1fr;
+    }
+    main #contact ul li .text-phone, main #contact ul li .text-email{
+        font-size: var(--size-text2);
+    }
+    main #contact ul li img{
+        display: block;
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+    }
+    footer{
+        height: 13rem;
+        row-gap: 1.8rem;
+    }
+    footer .author{
+        font-size: var(--size-h3);
+    }
+    footer .copyright{
+        font-size: var(--size-text3);
+    }
 }
