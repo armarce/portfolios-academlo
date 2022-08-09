@@ -450,7 +450,7 @@ main #portfolio ul{
     text-align: center;
 }
 main #portfolio ul li{
-    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    /*box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;*/
 }
 main #portfolio ul li img{
     width: 46rem;
@@ -813,13 +813,20 @@ footer .copyright a:hover{
     main #portfolio{
         padding-top: 1rem;
     }
+    main #portfolio ul{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 2rem;
+    }
     main #portfolio ul li{
         box-shadow: none;
-    }    
+        width: 100%;
+    }
     main #portfolio ul li img{
         padding: 0;
-        height: auto;
-        object-fit: cover;
+        width: 90%;
+        height: 22rem;
+        aspect-ratio: 1 / 1;
     }
     main #contact{
         height: 38rem;
